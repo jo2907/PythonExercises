@@ -23,11 +23,15 @@ def dotvec(a,b):
 print(dotvec(avec,bvec))
 
 # Q2b - product of matrices
-A = np.array([ [1, 2],[3,4]]) 
-B = np.array([ [5, 6],[7,8]]) 
+A = np.array([ [1, 2],[3,4],[5,6]]) 
+B = np.array([ [5, 6,8],[7,8,9]]) 
 def matrixmultip(a,b):
+
     # if no. of rows of a == no. of cols of b
-    product = np.matmul(a,b)
-    return product
+    if A.shape[1] == B.shape[0]:
+        product = np.matmul(a,b)
+        return product
+    else:
+        print("Error: Incorrect matrix dimensions")
 
 print(matrixmultip(A,B))
